@@ -1,0 +1,88 @@
+body {
+  background-color: $bg-light;
+  color: $text-light;
+}
+
+body.dark {
+  background-color: $bg-dark;
+  color: $text-dark;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  color: $text-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  transition: 0.6s ease;
+  font-weight: bold;
+  z-index: 1;
+}
+
+header.scrolled {
+  position: fixed;
+  background: $bg-dark;
+}
+
+h1 {
+  color: #165eda;
+  font-size: 36px;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px 4px #a5b9de;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger {
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+  }
+}
+
+.theme-toggle {
+  cursor: pointer;
+  width: 30px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background-color: inherit;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

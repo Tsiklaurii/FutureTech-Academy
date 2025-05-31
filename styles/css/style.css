@@ -1,0 +1,220 @@
+body {
+  background-color: #fff;
+  color: #111;
+}
+
+body.dark {
+  background-color: #070707;
+  color: #fff;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  font-weight: bold;
+  z-index: 1;
+}
+
+header.scrolled {
+  position: fixed;
+  background: #070707;
+}
+
+h1 {
+  color: #165eda;
+  font-size: 36px;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px 4px #a5b9de;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.burger {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: currentColor;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  width: 30px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background-color: inherit;
+  }
+  .menu.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@font-face {
+  font-family: "BPG Mrgvlovani Caps";
+  src: url("../fonts/bpg_mrgvlovani_caps_2010.ttf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "BPG Mrgvlovani Caps";
+  background-color: #f7f2f2;
+  text-align: center;
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.registration {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  color: white;
+  font-size: 25px;
+}
+
+.registration-btn {
+  padding: 20px 25px;
+  border: none;
+  font-family: "BPG Mrgvlovani Caps";
+  font-size: 15px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: #0086d3;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.registration-btn:hover {
+  background-color: transparent;
+  color: #0086d3;
+  border: 2px solid #0086d3;
+}
+
+.registration-btn:active {
+  background-color: #0086d3;
+  color: white;
+}
+
+@font-face {
+  font-family: "BPG Mrgvlovani";
+  src: url("../fonts/bpg_mrgvlovani_2009.ttf") format("opentype");
+}
+
+footer {
+  font-family: "BPG Mrgvlovani";
+  bottom: 0;
+  background-color: #020202;
+  color: #9e9e9e;
+  width: 100%;
+  padding: 40px;
+}
+
+footer .logo {
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+}
+
+footer .footer-logo-name {
+  font-size: 30px;
+  margin: 10px;
+}
+
+footer .social-networks {
+  width: 300px;
+  height: 70px;
+  margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .social-networks img {
+  width: 50px;
+}
+
+footer hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: #9e9e9e;
+}
+
+footer .copy {
+  font-size: 13px;
+}
+/*# sourceMappingURL=style.css.map */
