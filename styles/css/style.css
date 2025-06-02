@@ -51,6 +51,13 @@ h1 {
 .menu a {
   text-decoration: none;
   color: inherit;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  -webkit-box-shadow: 0 2px white;
+          box-shadow: 0 2px white;
 }
 
 .burger {
@@ -74,32 +81,6 @@ h1 {
   width: 30px;
 }
 
-@media (max-width: 600px) {
-  .menu {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    padding: 25px;
-    background-color: inherit;
-  }
-  .menu.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .burger {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 @font-face {
   font-family: "BPG Mrgvlovani Caps";
   src: url("../fonts/bpg_mrgvlovani_caps_2010.ttf") format("opentype");
@@ -114,7 +95,6 @@ h1 {
 
 body {
   font-family: "BPG Mrgvlovani Caps";
-  background-color: #f7f2f2;
   text-align: center;
 }
 
@@ -133,6 +113,11 @@ body {
   left: 55%;
   color: white;
   font-size: 25px;
+}
+
+.registration p {
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .registration-btn {
@@ -161,6 +146,82 @@ body {
 .registration-btn:active {
   background-color: #0086d3;
   color: white;
+}
+
+.career-cover {
+  height: 200px;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #4848e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+}
+
+.career-cover h2 {
+  color: white;
+  font-size: 36px;
+}
+
+.open-positions {
+  color: #222222;
+  font-size: 40px;
+  margin: 50px;
+}
+
+#jobs-container .card-body {
+  text-align: left;
+}
+
+#jobs-container .card-title {
+  font-weight: bold;
+}
+
+.pagination {
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .menu {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background-color: #070707;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  header {
+    background-color: #070707;
+  }
+  .menu.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cover {
+    display: none;
+  }
 }
 
 @font-face {

@@ -43,6 +43,10 @@ h1 {
   a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s ease;
+  }
+  a:hover {
+    box-shadow: 0 2px white;
   }
 }
 
@@ -64,25 +68,4 @@ h1 {
 .theme-toggle {
   cursor: pointer;
   width: 30px;
-}
-
-@media (max-width: 600px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    padding: 25px;
-    background-color: inherit;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-  }
 }

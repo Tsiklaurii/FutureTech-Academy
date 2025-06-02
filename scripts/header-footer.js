@@ -24,16 +24,19 @@ function loadContent(id, file) {
                     menu.classList.toggle("active");
                 })
             }
+
+            // Header scroll
+            if (id === "header") {
+                window.addEventListener('scroll', function () {
+                    const header = document.querySelector('header');
+                    if (window.scrollY > 1) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
         })
 }
 loadContent('header', 'header.html');
 loadContent('footer', 'footer.html');
-
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('header');
-    if (window.scrollY > 1) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});

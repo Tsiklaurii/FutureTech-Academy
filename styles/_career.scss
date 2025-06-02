@@ -1,0 +1,32 @@
+.career-cover {
+  height: 200px;
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: $careers-cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+  h2 {
+    color: white;
+    font-size: 36px;
+  }
+}
+.open-positions{
+    color: rgb(34, 34, 34);
+    font-size: 40px;
+    margin: 50px;
+}
+#jobs-container{
+    .card-body{
+        text-align: left;
+    }
+    .card-title{
+        font-weight: bold;
+    }
+}
+.pagination{
+    margin-bottom: 50px;
+}

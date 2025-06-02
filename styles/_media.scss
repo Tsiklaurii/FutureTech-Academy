@@ -1,17 +1,40 @@
-// @media only screen and (max-width: 1884px) {
-// }
+@media only screen and (max-width: 1884px) {
+}
 
-// @media only screen and (max-width: 1420px) {
-// }
+@media only screen and (max-width: 1420px) {
+}
 
-// @media only screen and (max-width: 1024px) {
-// }
+@media only screen and (max-width: 1024px) {
+}
 
-// @media only screen and (max-width: 719px) {
-// }
+@media only screen and (max-width: 719px) {
+}
 
-// @media only screen and (max-width: 500px) {
-//     header{
-//         display: block;
-//     }
-// }
+@media only screen and (max-width: 500px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background-color: $bg-dark;
+    align-items: flex-start;
+  }
+  header {
+    background-color: $bg-dark;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+  
+  .cover {
+    display: none;
+  }
+}
