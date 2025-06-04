@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,39 @@
     <title>Contact</title>
     <link rel="stylesheet" href="styles/css/style.css">
 </head>
+
 <body>
     <div id="header"></div>
+    <div class="header-div"></div>
 
-    <div style="height: 1000px; background-color: aquamarine;"></div>
+    <!-- Cover -->
+    <div class="cover">
+        <img src="images/contacts-page-cover.jpg" alt="General-slider">
+        <div class="contact">
+            <h3>კონტაქტი</h3>
+            <p class=""><a href="index.html">მთავარი</a> &#187; კონტაქტი</p>
+        </div>
+    </div>
+    
+    <form class="contact-form">
+        <p>მოგვწერეთ</p>
+        <input type="text" name="fullName" id="fullName" placeholder="სახელი და გვარი*">
+        <input type="email" name="email" id="email" placeholder="ელ-ფოსტა*">
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="ტელეფონის ნომერი*"><br>
+        <textarea name="message" id="message" placeholder="წერილი"></textarea><br>
+        <button>გაგზავნა</button>
+    </form>
+    
+    <p class="contact-p">კონტაქტი</p>
+    <div class="contact-info">
+        <div>📍 თბილისი, საქართველო</div>
+        <div>📞 +995 555 55 55 55</div>
+        <div>📩 futuretechacademy@gmail.com</div>
+    </div>
 
     <div id="footer"></div>
-    
+
     <script src="scripts/header-footer.js"></script>
 </body>
+
 </html>
