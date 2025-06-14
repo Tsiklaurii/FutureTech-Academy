@@ -56,7 +56,8 @@ function renderPagination() {
         link.classList.add("page-link");
         link.href = "#";
         link.textContent = i;
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
             currentPage = i;
             renderJobs(currentPage);
             const activeItem = paginationContainer.querySelector(".page-item.active");
