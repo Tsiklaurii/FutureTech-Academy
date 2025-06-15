@@ -51,10 +51,12 @@
 
   .about-info {
     margin: 40px 40px;
-    h1{
+
+    h1 {
       font-size: 20px;
     }
-    p{
+
+    p {
       font-size: 15px;
     }
   }
@@ -82,5 +84,9 @@
         font-size: 14px;
       }
     }
+  }
+
+  .mb-0 {
+    font-size: 15px;
   }
 }

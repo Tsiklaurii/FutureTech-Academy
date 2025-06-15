@@ -1,0 +1,32 @@
+.registration-container {
+    max-width: 650px;
+    padding: 40px 100px;
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    input {
+        margin-bottom: 20px;
+    }
+
+    input:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    button {
+        color: white;
+        padding: 10px;
+    }
+
+    button:hover {
+        background-color: rgb(130, 163, 255);
+        border-color: rgb(130, 163, 255);
+        color: white;
+    }
+
+    button:active {
+        background-color: $registration-btn;
+    }
+}

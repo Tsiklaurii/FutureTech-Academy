@@ -103,23 +103,65 @@ body {
   border-radius: 8px;
   border: 2px solid transparent;
   cursor: pointer;
-  background-color: rgb(0, 134, 211);
-  color: white;
+  background-color: #1664db;
   font-weight: bold;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   margin-top: 30px;
 }
+.registration-btn a {
+  color: white;
+  text-decoration: none;
+}
 
 .registration-btn:hover {
   background-color: transparent;
-  color: rgb(0, 134, 211);
-  border: 2px solid rgb(0, 134, 211);
+  color: #1664db;
+  border: 2px solid #1664db;
 }
 
 .registration-btn:active {
-  background-color: rgb(0, 134, 211);
+  background-color: #1664db;
   color: white;
+}
+
+.courses-container {
+  padding: 80px;
+}
+.courses-container h4 {
+  margin-bottom: 70px;
+}
+.courses-container .courses {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.courses-container .courses h5 {
+  margin-bottom: 30px;
+}
+.courses-container .courses .card {
+  width: 550px;
+  height: 230px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+.courses-container .courses .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.courses-container .courses .row {
+  height: 100%;
+}
+.courses-container .courses .col-md-6 {
+  height: 100%;
+}
+.courses-container .courses .blue-card {
+  color: white;
+  background-color: #1664db;
+  display: flex;
+  align-items: center;
 }
 
 .career-cover {
@@ -204,7 +246,7 @@ body {
   border-radius: 8px;
   border: 2px solid transparent;
   cursor: pointer;
-  background-color: rgb(0, 134, 211);
+  background-color: #1664db;
   color: white;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -213,11 +255,11 @@ body {
 }
 .contact-form button:hover {
   background-color: transparent;
-  color: rgb(0, 134, 211);
-  border: 2px solid rgb(0, 134, 211);
+  color: #1664db;
+  border: 2px solid #1664db;
 }
 .contact-form button:active {
-  background-color: rgb(0, 134, 211);
+  background-color: #1664db;
   color: white;
 }
 .contact-form p {
@@ -388,6 +430,33 @@ iframe {
   font-family: "BPG Mrgvlovani";
 }
 
+.registration-container {
+  max-width: 650px;
+  padding: 40px 100px;
+}
+.registration-container h1 {
+  margin-bottom: 40px;
+}
+.registration-container input {
+  margin-bottom: 20px;
+}
+.registration-container input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.registration-container button {
+  color: white;
+  padding: 10px;
+}
+.registration-container button:hover {
+  background-color: rgb(130, 163, 255);
+  border-color: rgb(130, 163, 255);
+  color: white;
+}
+.registration-container button:active {
+  background-color: #1664db;
+}
+
 @media only screen and (max-width: 500px) {
   .header-div {
     display: block;
@@ -455,6 +524,9 @@ iframe {
   }
   .details .blog-info p {
     font-size: 14px;
+  }
+  .mb-0 {
+    font-size: 15px;
   }
 }
 @font-face {
