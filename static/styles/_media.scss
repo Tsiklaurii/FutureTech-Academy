@@ -89,4 +89,28 @@
   .mb-0 {
     font-size: 15px;
   }
+
+  .courses-container .courses .card {
+    width: 350px;
+    height: 200px;
+  }
+
+  .course-info {
+    display: block;
+    padding: 40px 90px;
+
+    .prof {
+      width: 330px;
+      height: 310px;
+
+      img {
+        width: 330px;
+        height: 310px;
+      }
+    }
+
+    div {
+      margin-bottom: 20px;
+    }
+  }
 }

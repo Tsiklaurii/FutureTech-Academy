@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Details</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/css/style.css">
-</head>
+{% block content %}
+<div id="header-div"></div>
 
-<body>
-    <div id="header"></div>
-    <div id="header-div"></div>
+<div id="blog_details_container" class="blog_details_container"></div>
 
-    <div id="blog_details_container" class="blog_details_container"></div>
+<footer>
+    <div class="logo">
+        <a href="index.html"><img src="" alt="logo"></a>
+    </div>
+    <p class="footer-logo-name">FutureTech Academy</p>
+    <p>მომავლის ტექნოლოგიების აკადემია</p>
+    <div class="social-networks">
+        <a href="https://www.facebook.com/"><img src="/static/images/soc-networks/fb.PNG" alt="fb"></a>
+        <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG" alt="instagram"></a>
+        <a href="https://www.linkedin.com/"><img src="/static/images/soc-networks/linkedin.PNG" alt="linkedin"></a>
+        <a href="https://www.youtube.com/"><img src="/static/images/soc-networks/youtube.PNG" alt="youtube"></a>
+    </div>
+    <p>წესები და პირობები</p>
+    <hr>
+    <p class="copy">&copy; 2025. საქართველო, თბილისი | ყველა უფლება დაცულია</p>
+</footer>
 
-    <div id="footer"></div>
-
-    <script src="scripts/header-footer.js"></script>
-    <script src="scripts/blog_details.js"></script>
+<script src="/static/scripts/header.js"></script>
+<script src="/static/scripts/blog_details.js"></script>
 </body>
 
 </html>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 140px;
+    width: 100%;
+
+    .prof {
+        width: 400px;
+        height: 350px;
+
+        img {
+            width: 400px;
+            height: 350px;
+            object-fit: cover;
+        }
+    }
+
+    .course-description {
+        max-width: 630px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .course-information,
+        .prof-name,
+        .date {
+            font-family: "BPG Mrgvlovani";
+        }
+    }
+}

@@ -1,53 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>About</title>
-    <link rel="stylesheet" href="styles/css/style.css">
-</head>
-
-<body>
-    <div id="header"></div>
-    <div class="header-div"></div>
-
-    <!-- Cover -->
-    <div class="cover">
-        <img src="images/contacts-page-cover.jpg" alt="General-slider">
-        <div class="about">
-            <h3>აკადემიის შესახებ</h3>
-            <p class=""><a href="index.html">მთავარი</a> &#187; აკადემიის შესახებ</p>
-        </div>
+{% block content %}
+<!-- Cover -->
+<div class="cover">
+    <img src="/static/images/contacts-page-cover.jpg" alt="General-slider">
+    <div class="about">
+        <h3>აკადემიის შესახებ</h3>
+        <p class=""><a href="index.html">მთავარი</a> &#187; აკადემიის შესახებ</p>
     </div>
+</div>
 
-    <section class="about-info">
-        <h1>ჩვენი ისტორია</h1>
-        <p>Future Tech Academy დაარსდა 2025 წელს, სურვილით, მომავალი თაობისთვის ხელმისაწვდომი გაეხადა ტექნოლოგიური
-            განათლება. ჩვენი მიზანია, ყველას მიეცეს საშუალება ისწავლოს პროგრამირება, ვებდიზაინი, მონაცემთა ანალიზი და
-            სხვა პოპულარული დისციპლინები თანამედროვე მეთოდებით.</p>
-        <h1>როგორ ვქმნით საუკეთესო სასწავლო პლატფორმას?</h1>
-        <p>ჩვენ გვჯერა, რომ სწავლა უნდა იყოს საინტერესო, ინტერაქტიული და პრაქტიკაზე დაფუძნებული. ამიტომაც ვქმნით:</p>
-        <ul class="indented">
-            <li>სრულად ინტერაქტიულ კურსებს რეალური პროექტებით</li>
-            <li>გამოცდილი მენტორების მხარდაჭერას</li>
-            <li>მოსახერხებელ ინტერფეისს ყველა მოწყობილობაზე</li>
-            <li>უნიკალურ საგანმანათლებლო მეთოდებს, რომლებიც ერგება როგორც დამწყებებს, ისე პროფესიონალებს</li>
-        </ul>
-        <p>ჩვენი პლატფორმა მუდმივად ვითარდება, რათა სწავლა უფრო ეფექტური და სასიამოვნო გახდეს.</p>
-        <h1>შემოგვიერთდი!</h1>
-        <p>Future Tech Academy-ში სწავლა ნიშნავს ინვესტიციას შენს მომავალში. ჩვენს პლატფორმაზე შენი მიზნები ხელშესახები
-            ხდება. დაიწყე გზა კარიერისკენ ჩვენთან ერთად – მომავალი უკვე აქ არის!</p>
-    </section>
+<section class="about-info">
+    <h1>ჩვენი ისტორია</h1>
+    <p>Future Tech Academy დაარსდა 2025 წელს, სურვილით, მომავალი თაობისთვის ხელმისაწვდომი გაეხადა ტექნოლოგიური
+        განათლება. ჩვენი მიზანია, ყველას მიეცეს საშუალება ისწავლოს პროგრამირება, ვებდიზაინი, მონაცემთა ანალიზი და
+        სხვა პოპულარული დისციპლინები თანამედროვე მეთოდებით.</p>
+    <h1>როგორ ვქმნით საუკეთესო სასწავლო პლატფორმას?</h1>
+    <p>ჩვენ გვჯერა, რომ სწავლა უნდა იყოს საინტერესო, ინტერაქტიული და პრაქტიკაზე დაფუძნებული. ამიტომაც ვქმნით:</p>
+    <ul class="indented">
+        <li>სრულად ინტერაქტიულ კურსებს რეალური პროექტებით</li>
+        <li>გამოცდილი მენტორების მხარდაჭერას</li>
+        <li>მოსახერხებელ ინტერფეისს ყველა მოწყობილობაზე</li>
+        <li>უნიკალურ საგანმანათლებლო მეთოდებს, რომლებიც ერგება როგორც დამწყებებს, ისე პროფესიონალებს</li>
+    </ul>
+    <p>ჩვენი პლატფორმა მუდმივად ვითარდება, რათა სწავლა უფრო ეფექტური და სასიამოვნო გახდეს.</p>
+    <h1>შემოგვიერთდი!</h1>
+    <p>Future Tech Academy-ში სწავლა ნიშნავს ინვესტიციას შენს მომავალში. ჩვენს პლატფორმაზე შენი მიზნები ხელშესახები
+        ხდება. დაიწყე გზა კარიერისკენ ჩვენთან ერთად – მომავალი უკვე აქ არის!</p>
+</section>
 
-    <iframe width="700" height="400" src="https://www.youtube.com/embed/enrTLKqMGgo?autoplay=1&mute=1"
-        title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-    </iframe>
+<iframe width="700" height="400" src="https://www.youtube.com/embed/enrTLKqMGgo?autoplay=1&mute=1"
+    title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 
-    <div id="footer"></div>
+<footer>
+    <div class="logo">
+        <a href="index.html"><img src="" alt="logo"></a>
+    </div>
+    <p class="footer-logo-name">FutureTech Academy</p>
+    <p>მომავლის ტექნოლოგიების აკადემია</p>
+    <div class="social-networks">
+        <a href="https://www.facebook.com/"><img src="/static/images/soc-networks/fb.PNG" alt="fb"></a>
+        <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG" alt="instagram"></a>
+        <a href="https://www.linkedin.com/"><img src="/static/images/soc-networks/linkedin.PNG" alt="linkedin"></a>
+        <a href="https://www.youtube.com/"><img src="/static/images/soc-networks/youtube.PNG" alt="youtube"></a>
+    </div>
+    <p>წესები და პირობები</p>
+    <hr>
+    <p class="copy">&copy; 2025. საქართველო, თბილისი | ყველა უფლება დაცულია</p>
+</footer>
 
-    <script src="scripts/header-footer.js"></script>
+<script src="/static/scripts/header.js"></script>
 </body>
 
 </html>
+
+{% endblock %}

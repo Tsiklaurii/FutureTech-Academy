@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Blog</title>
-    <link rel="stylesheet" href="styles/css/style.css">
-</head>
+{% block content %}
 
-<body>
-    <div id="header"></div>
-
-    <!-- Cover -->
-    <div class="cover">
-        <img src="images/contacts-page-cover.jpg" alt="General-slider">
-        <div class="blog">
-            <h3>ბლოგი</h3>
-            <p class=""><a href="index.html">მთავარი</a> &#187; ბლოგი</p>
-        </div>
+<!-- Cover -->
+<div class="cover">
+    <img src="/static/images/contacts-page-cover.jpg" alt="General-slider">
+    <div class="blog">
+        <h3>ბლოგი</h3>
+        <p class=""><a href="index.html">მთავარი</a> &#187; ბლოგი</p>
     </div>
+</div>
 
-    <div class="blogs-container" id="blogs-container"></div>
-    
-    <div id="footer"></div>
+<div class="blogs-container" id="blogs-container"></div>
 
-    <script src="scripts/header-footer.js"></script>
-    <script src="scripts/blog.js"></script>
+<footer>
+    <div class="logo">
+        <a href="index.html"><img src="" alt="logo"></a>
+    </div>
+    <p class="footer-logo-name">FutureTech Academy</p>
+    <p>მომავლის ტექნოლოგიების აკადემია</p>
+    <div class="social-networks">
+        <a href="https://www.facebook.com/"><img src="/static/images/soc-networks/fb.PNG" alt="fb"></a>
+        <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG" alt="instagram"></a>
+        <a href="https://www.linkedin.com/"><img src="/static/images/soc-networks/linkedin.PNG" alt="linkedin"></a>
+        <a href="https://www.youtube.com/"><img src="/static/images/soc-networks/youtube.PNG" alt="youtube"></a>
+    </div>
+    <p>წესები და პირობები</p>
+    <hr>
+    <p class="copy">&copy; 2025. საქართველო, თბილისი | ყველა უფლება დაცულია</p>
+</footer>
+
+<script src="/static/scripts/header.js"></script>
+<script src="/static/scripts/blog.js"></script>
 </body>
 
 </html>
+
+{% endblock %}
