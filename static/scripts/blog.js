@@ -16,7 +16,7 @@ fetch('https://683c01c428a0b0f2fdc5eb8b.mockapi.io/blogs')
             // ბლოგის id-ის შენახვა დეტალების სანახავად
             card.addEventListener("click", () => {
                 localStorage.setItem("selectedBlogId", blog.id);
-                window.location.href = "blog_details.html";
+                window.location.href = "blogdetails.html";
             })
         });
     })
