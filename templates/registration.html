@@ -6,17 +6,27 @@
 
 <div class="container registration-container">
     <h1>რეგისტრაცია</h1>
-    <div class="row">
-        <input type="text" id="firstName" placeholder="სახელი..." class="form-control">
-        <input type="text" id="lastName" placeholder="გვარი..." class="form-control">
-        <input type="email" id="email" placeholder="ემაილი..." class="form-control">
-        <input type="password" id="password" placeholder="პაროლი..." class="form-control">
+    <form class="row" method="post" enctype="multipart/form-data">
+        {% for errors in form.errors.values() %}
+            {% for error in errors %}
+                <p class="text-danger"> * {{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form.hidden_tag() }}
+
+        {{ form.username(placeholder=form.username.label.text, class="form-control") }}
+        {{ form.email(placeholder=form.email.label.text, class="form-control") }}
+        {{ form.password(placeholder=form.password.label.text, class="form-control") }}
+        {{ form.repeat_password(placeholder=form.repeat_password.label.text, class="form-control") }}
+        {{ form.profile_image(class="form-control", accept=".jpg, .png, jpeg") }}
+
         <div class="align-items-center mt-2">
-            <input type="checkbox" id="checkbox" class="me-2">
-            <label for="checkbox" class="mb-0">I agree to the terms and conditions.</label>
+            {{ form.agree }}
+            {{ form.agree.label(class="mb-0") }}
         </div>
-        <button class="registration-btn">რეგისტრაცია</button>
-    </div>
+        {{ form.submit(class="registration-btn") }}
+    </form>
 </div>
 
 <footer>

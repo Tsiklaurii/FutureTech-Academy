@@ -1,16 +1,33 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+
+from forms import RegisterForm, CourseForm
+from os import path
+from uuid import uuid4
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "secretkeyyy1234@@@@"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+UPLOAD_PATH = path.join(app.root_path, "static", "upload")
 
-courses = [
-    {"id": 0, "name": "Python კურსი", "price": 3200, "prof": "დავით ინანაშვილი", "img":"https://i.pinimg.com/736x/f6/7f/be/f67fbe635aa1c06e99b90e66def65761.jpg", "description":"სწავლა იწყება საფუძვლებიდან და გეხმარება ნაბიჯ-ნაბიჯ გადახვიდე პრაქტიკულ ცოდნაზე. კურსი მოიცავს ისეთ თემებს, როგორებიცაა: ცვლადები, პირობითი ოპერატორები, ციკლები, ფუნქციები, ფაილური სისტემასთან მუშაობა და ობიექტზე ორიენტირებული პროგრამირება. დავალებები აგებულია რეალურ მაგალითებზე, ხოლო პროექტები გეხმარება პორტფოლიოს შექმნაში.", "date":"1 აგვისტო - 30 მაისი"},
-    {"id": 1, "name": "ვებ-დეველოპმენტის კურსი", "price": 800, "prof": "გიორგი თამარაშვილი", "img":"https://i.pinimg.com/736x/42/ca/3f/42ca3f46f4cee593361ac54785cda7d8.jpg", "description":"ეს კურსი გაძლევს საშუალებას შექმნა თანამედროვე, რეაგირებადი ვებსაიტები HTML, CSS და JavaScript-ის გამოყენებით. ნაბიჯ-ნაბიჯ შეისწავლი სტრუქტურირებას, სტილიზაციას და ინტერაქციულ ფუნქციებს. კურსის ბოლოს შეგეძლება შექმნა საკუთარი პორტფოლიოს ვებსაიტი და დაამზადო მცირე პროექტები რეალური დიზაინის მიხედვით." , "date":"3 ივლისი - 30 დეკემბერი"},
-    {"id": 2, "name": "ციფრული მარკეტინგის კურსი", "price": 2000, "prof": "ლიკა კიკნაძე", "img":"https://i.pinimg.com/736x/82/d5/62/82d562e85a3d9cbd1f0570ce404836b6.jpg", "description":"ეს კურსი გასწავლით როგორ გამოიყენო სოციალური მედია, საძიებო სისტემები და რეკლამა ონლაინ სივრცეში ბიზნესის გასაზრდელად. სწავლობთ SEO-ს, Google Ads-ს, Meta Ads-ს, იმეილ მარკეტინგსა და ანალიტიკას. კურსის ბოლოს შეძლებთ კამპანიების დაგეგმვას, შესრულებას და შედეგების გაზომვას.", "date":"3 აგვისტო - 3 მარტი"},
-    {"id": 3, "name": "ინტერიერის დიზაინის კურსი", "price": 900, "prof": "ლადო კერესელიძე", "img":"https://i.pinimg.com/736x/06/8c/66/068c6667b3661966c151e511727e64b2.jpg", "description":"აღმოაჩინე სივრცის დიზაინის სამყარო! კურსი გასწავლის ფერთა თეორიას, განლაგების წესებს, განათებისა და მასალების შერჩევას. შეისწავლი როგორც ხელით ესკიზების შექმნას, ისე პროგრამებით მუშაობას (AutoCAD, SketchUp). კურსის ბოლოს შეძლებ მოამზადო საკუთარი დიზაინ-პროექტი რეალურ სივრცეზე დაფუძნებით.", "date":"11 ივნისი - 1 იანვარი"},
-]
+db = SQLAlchemy(app)
+
+# MODELS
+
+class Course(db.Model):
+    __tablename__ = "courses"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    price = db.Column(db.Float)
+    prof = db.Column(db.String(100))
+    img = db.Column(db.String(300))
+    description = db.Column(db.String(1000))
+    date = db.Column(db.String(50))
+
 
 @app.route("/")
 def index():
+    courses = Course.query.all()
     return render_template("index.html", courses=courses)
 
 @app.route("/login")
@@ -37,13 +54,72 @@ def career():
 def contact():
     return render_template("contact.html")
 
-@app.route("/registration")
+@app.route("/registration", methods=["GET", "POST"])
 def registration():
-    return render_template("registration.html")
+    form = RegisterForm()
+    if form.validate_on_submit():
+        file = form.profile_image.data
 
-@app.route("/view/<int:courses_index>")
-def view_course(courses_index):
-    chosen_course = courses[courses_index]
+        _, extension = path.splitext(file.filename)
+        filename = f"{uuid4()}{extension}"
+        file.save(path.join(UPLOAD_PATH, filename))
+    return render_template("registration.html", form=form)
+
+@app.route("/add_course", methods=["GET", "POST"])
+def add_product():
+    form = CourseForm()
+    if form.validate_on_submit():
+        file = form.img.data
+        _, extension = path.splitext(file.filename)
+        filename = f"{uuid4()}{extension}"
+        file.save(path.join(UPLOAD_PATH, filename))
+
+        new_course = Course(name=form.name.data, price=form.price.data, prof=form.prof.data,
+                            img=filename, description=form.description.data, date=form.date.data)
+        db.session.add(new_course)
+        db.session.commit()
+
+        return redirect(url_for("index"))
+
+    return render_template("add_course.html", form=form)
+
+@app.route("/edit_course/<int:id>", methods=["GET", "POST"])
+def edit_product(id):
+    course = Course.query.get(id)
+    form = CourseForm(name=course.name, price=course.price, prof=course.prof, description=course.description, date=course.date)
+
+    if form.validate_on_submit():
+        course.name = form.name.data
+        course.price = form.price.data
+        course.prof = form.prof.data
+        course.description = form.description.data
+        course.date = form.date.data
+
+        if form.img.data:
+            file = form.img.data
+            _, extension = path.splitext(file.filename)
+            filename = f"{uuid4()}{extension}"
+            file.save(path.join(UPLOAD_PATH, filename))
+
+            course.img = filename
+
+        db.session.commit()
+        return redirect(url_for("index"))
+
+    return render_template("add_course.html", form=form)
+
+@app.route("/delete_course/<int:id>")
+def delete_course(id):
+    course = Course.query.get(id)
+    db.session.delete(course)
+    db.session.commit()
+
+    return redirect(url_for("index"))
+
+@app.route("/view/<int:courses_id>")
+def view_course(courses_id):
+    chosen_course = Course.query.get(courses_id)
     return render_template("view_course.html", course=chosen_course)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

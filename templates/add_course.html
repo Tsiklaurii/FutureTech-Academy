@@ -4,20 +4,27 @@
 
 <div class="header-div" style="display: block; background-color: black;"></div>
 
-<!-- Course Info -->
-<div class="course-info">
-    <div class="prof"><img src="/static/upload/{{ course.img }}" alt="Course Professor"></div>
-    <div class="course-description">
-        <div class="title">{{ course.name }}</div>
-        <div class="price">{{ course.price }} ₾</div>
-        <div class="prof-name">კურსს გაუძღვება: {{ course.prof }}</div>
-        <div class="date">თარიღი: {{ course.date }}</div>
-        <div class="course-information">{{ course.description }}</div>
-    </div>
-</div>
+<div class="container registration-container">
+    <h1>კურსის დამატება</h1>
+    <form class="row" method="post" enctype="multipart/form-data">
+        {% for errors in form.errors.values() %}
+            {% for error in errors %}
+                <p class="text-danger"> * {{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+        
+        {{ form.hidden_tag() }}
 
-<a href="/edit_course/{{ course.id }}" class="btn btn-primary mb-4">კურსის ცვლილება</a>
-<a href="/delete_course/{{ course.id }}" class="btn btn-danger mb-4">კურსის წაშლა</a>
+        {{ form.name(placeholder=form.name.label.text, class="form-control") }}
+        {{ form.price(placeholder=form.price.label.text, class="form-control") }}
+        {{ form.prof(placeholder=form.prof.label.text, class="form-control") }}
+        {{ form.img(class="form-control", accept=".jpg, .png, jpeg") }}
+        {{ form.description(placeholder=form.description.label.text, class="form-control") }}
+        {{ form.date(placeholder=form.date.label.text, class="form-control") }}
+
+        {{ form.submit(class="registration-btn") }}
+    </form>
+</div>
 
 <footer>
     <div class="logo">
@@ -37,6 +44,9 @@
 </footer>
 
 <script src="/static/scripts/header.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

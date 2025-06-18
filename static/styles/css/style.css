@@ -432,21 +432,22 @@ iframe {
 
 .registration-container {
   max-width: 650px;
-  padding: 40px 100px;
+  padding: 30px 100px;
 }
 .registration-container h1 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .registration-container input {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .registration-container input:focus {
   outline: none;
   box-shadow: none;
 }
-.registration-container button {
+.registration-container .registration-btn {
   color: white;
   padding: 10px;
+  margin-top: 5px;
 }
 .registration-container button:hover {
   background-color: rgb(130, 163, 255);
