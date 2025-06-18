@@ -1,17 +1,17 @@
-{% extends "base.html" %}
+{% extends "partials/base.html" %}
 
 {% block content %}
 
-<!-- Cover -->
-<div class="cover">
-    <img src="/static/images/contacts-page-cover.jpg" alt="General-slider">
-    <div class="blog">
-        <h3>ბლოგი</h3>
-        <p class=""><a href="/">მთავარი</a> &#187; ბლოგი</p>
+<div class="header-div" style="display: block; background-color: black;"></div>
+
+<div class="container registration-container">
+    <h1>შესვლა</h1>
+    <div class="row">
+        <input type="text" id="firstName" placeholder="მომხმარებლის სახელი..." class="form-control">
+        <input type="password" id="password" placeholder="პაროლი..." class="form-control">
+        <button class="registration-btn">შესვლა</button>
     </div>
 </div>
-
-<div class="blogs-container" id="blogs-container"></div>
 
 <footer>
     <div class="logo">
@@ -31,7 +31,9 @@
 </footer>
 
 <script src="/static/scripts/header.js"></script>
-<script src="/static/scripts/blog.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

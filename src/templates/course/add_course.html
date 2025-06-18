@@ -1,16 +1,29 @@
-{% extends "base.html" %}
+{% extends "partials/base.html" %}
 
 {% block content %}
 
 <div class="header-div" style="display: block; background-color: black;"></div>
 
 <div class="container registration-container">
-    <h1>შესვლა</h1>
-    <div class="row">
-        <input type="text" id="firstName" placeholder="მომხმარებლის სახელი..." class="form-control">
-        <input type="password" id="password" placeholder="პაროლი..." class="form-control">
-        <button class="registration-btn">შესვლა</button>
-    </div>
+    <h1>კურსის დამატება</h1>
+    <form class="row" method="post" enctype="multipart/form-data">
+        {% for errors in form.errors.values() %}
+            {% for error in errors %}
+                <p class="text-danger"> * {{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+        
+        {{ form.hidden_tag() }}
+
+        {{ form.name(placeholder=form.name.label.text, class="form-control") }}
+        {{ form.price(placeholder=form.price.label.text, class="form-control") }}
+        {{ form.prof(placeholder=form.prof.label.text, class="form-control") }}
+        {{ form.img(class="form-control", accept=".jpg, .png, jpeg") }}
+        {{ form.description(placeholder=form.description.label.text, class="form-control") }}
+        {{ form.date(placeholder=form.date.label.text, class="form-control") }}
+
+        {{ form.submit(class="registration-btn") }}
+    </form>
 </div>
 
 <footer>

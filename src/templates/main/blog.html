@@ -1,23 +1,17 @@
-{% extends "base.html" %}
+{% extends "partials/base.html" %}
 
 {% block content %}
 
-<div class="header-div" style="display: block; background-color: black;"></div>
-
-<!-- Course Info -->
-<div class="course-info">
-    <div class="prof"><img src="/static/upload/{{ course.img }}" alt="Course Professor"></div>
-    <div class="course-description">
-        <div class="title">{{ course.name }}</div>
-        <div class="price">{{ course.price }} ₾</div>
-        <div class="prof-name">კურსს გაუძღვება: {{ course.prof }}</div>
-        <div class="date">თარიღი: {{ course.date }}</div>
-        <div class="course-information">{{ course.description }}</div>
+<!-- Cover -->
+<div class="cover">
+    <img src="/static/images/contacts-page-cover.jpg" alt="General-slider">
+    <div class="blog">
+        <h3>ბლოგი</h3>
+        <p class=""><a href="/">მთავარი</a> &#187; ბლოგი</p>
     </div>
 </div>
 
-<a href="/edit_course/{{ course.id }}" class="btn btn-primary mb-4">კურსის ცვლილება</a>
-<a href="/delete_course/{{ course.id }}" class="btn btn-danger mb-4">კურსის წაშლა</a>
+<div class="blogs-container" id="blogs-container"></div>
 
 <footer>
     <div class="logo">
@@ -37,6 +31,7 @@
 </footer>
 
 <script src="/static/scripts/header.js"></script>
+<script src="/static/scripts/blog.js"></script>
 </body>
 
 </html>
