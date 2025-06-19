@@ -4,6 +4,11 @@ from wtforms.validators import DataRequired, length, equal_to, ValidationError
 from flask_wtf.file import FileField, FileRequired, FileSize, FileAllowed
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 
+class LoginForm(FlaskForm):
+    username = StringField("მომხმარებლის სახელი", validators=[DataRequired()])
+    password = PasswordField("პაროლი", validators=[DataRequired()])
+    login = SubmitField("შესვლა")
+
 class RegisterForm(FlaskForm):
     username = StringField("მომხმარებლის სახელი", validators=[DataRequired()])
     email = StringField("ემაილი", validators=[DataRequired()])

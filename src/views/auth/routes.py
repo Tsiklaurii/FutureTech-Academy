@@ -1,24 +1,42 @@
 from uuid import uuid4
 from os import path
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
+from flask_login import login_user
 
-from src.views.auth.forms import RegisterForm
+from src.views.auth.forms import RegisterForm, LoginForm
 from src.config import Config
+from src.models.user import User
 
 auth_blueprint = Blueprint("auth", __name__)
-users = []
 
-@auth_blueprint.route("/login")
+@auth_blueprint.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("auth/login.html")
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter(User.username == form.username.data).first()
+        if user and user.password == form.password.data:
+        # if user and user.check_password(form.password.data):
+            login_user(user)
+            return redirect(url_for("main.index"))
+        #     next = request.args.get("next")
+        #     if next:
+        #         return redirect(next)
+        #     flash("Logged in!", "success")
+        #     return redirect(url_for("main.index"))
+        # else:
+        #     flash("Username or Password is incorrect", "danger")
+
+    return render_template("auth/login.html", form=form)
 
 @auth_blueprint.route("/registration", methods=["GET", "POST"])
 def registration():
     form = RegisterForm()
     if form.validate_on_submit():
         file = form.profile_image.data
-
         _, extension = path.splitext(file.filename)
         filename = f"{uuid4()}{extension}"
         file.save(path.join(Config.UPLOAD_PATH, filename))
+
+        new_user = User(username=form.username.data, password=form.password.data, profile_img=filename)
+        new_user.create()
     return render_template("auth/registration.html", form=form)

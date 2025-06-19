@@ -13,7 +13,18 @@
 
 <body>
     <header>
-        <h1>Logo</h1>
+        <a href="/" class="main-logo-link">
+            <div class="main-logo">
+                <img src="static/upload/main-logo.png" alt="main logo">
+                <p>Future Tech Academy</p>
+            </div>
+        </a>
+        <!-- <a href="{{ url_for('main.index') }}" class="main-logo-link">
+            <div class="main-logo">
+                <img src="{{ url_for('static', filename='upload/main-logo.png') }}" alt="main logo">
+                <p>Future Tech Academy</p>
+            </div>
+        </a> -->
         <nav class="menu" id="menu">
             <a href="/">მთავარი</a>
             <a href="/career" target="_blank">კარიერა</a>
@@ -21,6 +32,7 @@
             <a href="/contact">კონტაქტი</a>
             <a href="/about">შესახებ</a>
             <a href="/registration">რეგისტრაცია</a>
+            <a href="/login">შესვლა</a>
         </nav>
         <div style="display: flex; gap: 15px; align-items: center;">
             <div class="theme-toggle" id="themeToggle">
@@ -37,3 +49,26 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer>
+        <div class="logo">
+            <a href="/" class="main-logo-link">
+                <div class="main-logo-footer">
+                    <img src="static/upload/main-logo.png" alt="main logo">
+                </div>
+            </a>
+        </div>
+
+        <p class="footer-logo-name">FutureTech Academy</p>
+        <p>მომავლის ტექნოლოგიების აკადემია</p>
+        <div class="social-networks">
+            <a href="https://www.facebook.com/"><img src="/static/images/soc-networks/fb.PNG" alt="fb"></a>
+            <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG"
+                    alt="instagram"></a>
+            <a href="https://www.linkedin.com/"><img src="/static/images/soc-networks/linkedin.PNG" alt="linkedin"></a>
+            <a href="https://www.youtube.com/"><img src="/static/images/soc-networks/youtube.PNG" alt="youtube"></a>
+        </div>
+        <p>წესები და პირობები</p>
+        <hr>
+        <p class="copy">&copy; 2025. საქართველო, თბილისი | ყველა უფლება დაცულია</p>
+    </footer>

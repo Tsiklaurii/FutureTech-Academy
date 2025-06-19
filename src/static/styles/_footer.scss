@@ -2,6 +2,7 @@
   font-family: "BPG Mrgvlovani";
   src: url("../fonts/bpg_mrgvlovani_2009.ttf") format("opentype");
 }
+
 footer {
   font-family: "BPG Mrgvlovani";
   bottom: 0;
@@ -11,15 +12,16 @@ footer {
   padding: 40px;
 
   .logo {
-    border: 1px solid white;
     width: 100px;
     height: 100px;
     margin: 30px auto;
   }
+
   .footer-logo-name {
     font-size: 30px;
     margin: 10px;
   }
+
   .social-networks {
     width: 300px;
     height: 70px;
@@ -32,12 +34,14 @@ footer {
       width: 50px;
     }
   }
+
   hr {
     margin-top: 40px;
     margin-bottom: 40px;
     background-color: $footer-txt-color;
   }
-  .copy{
+
+  .copy {
     font-size: 13px;
   }
 }

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 body {
   background-color: #fff;
   color: #111;
@@ -8,33 +7,6 @@ body {
 body.dark {
   background-color: #070707;
   color: #fff;
-}
-
-.main-logo-link {
-  text-decoration: none;
-
-  .main-logo {
-    width: 190px;
-    display: flex;
-    align-items: center;
-
-    img {
-      width: 70px;
-    }
-
-    p {
-      margin-top: 13px;
-      color: white;
-      margin: 0px;
-    }
-  }
-}
-
-.main-logo-footer {
-  img {
-    width: 90px;
-    margin-top: 10px;
-  }
 }
 
 header {
@@ -60,13 +32,11 @@ header.scrolled {
   display: flex;
   gap: 20px;
 }
-
 .menu a {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
 }
-
 .menu a:hover {
   box-shadow: 0 2px white;
 }
@@ -93,7 +63,6 @@ header.scrolled {
   font-family: "BPG Mrgvlovani Caps";
   src: url("../fonts/bpg_mrgvlovani_caps_2010.ttf") format("opentype");
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -109,7 +78,6 @@ body {
   position: relative;
   width: 100%;
 }
-
 .cover img {
   width: 100%;
 }
@@ -121,7 +89,6 @@ body {
   color: white;
   font-size: 25px;
 }
-
 .registration p {
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -141,7 +108,6 @@ body {
   transition: all 0.3s ease;
   margin-top: 30px;
 }
-
 .registration-btn a {
   color: white;
   text-decoration: none;
@@ -161,21 +127,17 @@ body {
 .courses-container {
   padding: 80px;
 }
-
 .courses-container h4 {
   margin-bottom: 70px;
 }
-
 .courses-container .courses {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 .courses-container .courses h5 {
   margin-bottom: 30px;
 }
-
 .courses-container .courses .card {
   width: 550px;
   height: 230px;
@@ -184,20 +146,16 @@ body {
   margin-bottom: 40px;
   border-radius: 10px;
 }
-
 .courses-container .courses .card:hover {
   transform: scale(1.02);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
-
 .courses-container .courses .row {
   height: 100%;
 }
-
 .courses-container .courses .col-md-6 {
   height: 100%;
 }
-
 .courses-container .courses .blue-card {
   color: white;
   background-color: #1664db;
@@ -216,7 +174,6 @@ body {
   justify-content: center;
   border-radius: 8px;
 }
-
 .career-cover h2 {
   color: white;
   font-size: 36px;
@@ -231,7 +188,6 @@ body {
 #jobs-container .card-body {
   text-align: left;
 }
-
 #jobs-container .card-title {
   font-weight: bold;
 }
@@ -248,23 +204,19 @@ body {
   color: white;
   font-size: 25px;
 }
-
 .contact h3 {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-
 .contact p {
   font-family: "BPG Mrgvlovani";
   margin-top: 30px;
   font-size: 16px;
 }
-
 .contact p a {
   color: white;
   text-decoration: none;
 }
-
 .contact p a:active {
   color: rgb(72, 72, 228);
 }
@@ -275,19 +227,16 @@ body {
   margin: 20px 5px 20px 5px;
   border: 1px solid #8d8d8d;
 }
-
 .contact-form textarea {
   width: 58%;
   height: 150px;
   padding: 15px;
   border: 1px solid #8d8d8d;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
 }
-
 .contact-form button {
   padding: 15px 25px;
   border: none;
@@ -303,18 +252,15 @@ body {
   transition: all 0.3s ease;
   margin-top: 30px;
 }
-
 .contact-form button:hover {
   background-color: transparent;
   color: #1664db;
   border: 2px solid #1664db;
 }
-
 .contact-form button:active {
   background-color: #1664db;
   color: white;
 }
-
 .contact-form p {
   font-weight: bold;
   margin-top: 30px;
@@ -335,14 +281,13 @@ body {
   font-family: "BPG Mrgvlovani";
   flex-wrap: wrap;
 }
-
 .contact-info div {
   margin: 15px 20px 80px 20px;
 }
 
 .header-div {
   display: none;
-  height: 76px;
+  height: 75px;
   background-color: transparent;
 }
 
@@ -354,23 +299,19 @@ body {
   color: white;
   font-size: 25px;
 }
-
 .about h3 {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-
 .about p {
   font-family: "BPG Mrgvlovani";
   margin-top: 30px;
   font-size: 16px;
 }
-
 .about p a {
   color: white;
   text-decoration: none;
 }
-
 .about p a:active {
   color: rgb(72, 72, 228);
 }
@@ -379,18 +320,15 @@ body {
   margin: 50px 100px;
   text-align: left;
 }
-
 .about-info p {
   font-family: "BPG Mrgvlovani";
 }
-
 .about-info h1 {
   color: rgb(7, 65, 192);
   font-size: 25px;
   letter-spacing: 1px;
   margin: 60px 0px 20px 0px;
 }
-
 .about-info .indented {
   font-family: "BPG Mrgvlovani";
   padding-left: 20px;
@@ -398,7 +336,6 @@ body {
   padding-left: 0;
   margin: 10px 0px 10px 0px;
 }
-
 .about-info .indented li::before {
   content: "🔹";
   margin-right: 8px;
@@ -421,23 +358,19 @@ iframe {
   color: white;
   font-size: 25px;
 }
-
 .blog h3 {
   font-weight: bold;
   letter-spacing: 0.5px;
 }
-
 .blog p {
   font-family: "BPG Mrgvlovani";
   margin-top: 30px;
   font-size: 16px;
 }
-
 .blog p a {
   color: white;
   text-decoration: none;
 }
-
 .blog p a:active {
   color: rgb(72, 72, 228);
 }
@@ -449,7 +382,6 @@ iframe {
   flex-wrap: wrap;
   padding: 80px;
 }
-
 .blogs-container .blog-card {
   width: 350px;
   margin-bottom: 50px;
@@ -458,23 +390,20 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
 }
-
 .blogs-container .blog-card .blogs-image-container {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 8px;
 }
-
 .blogs-container .blog-card img {
   width: 350px;
   height: 200px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   transition: all 0.3s ease;
   border-radius: 10px;
   display: block;
 }
-
 .blogs-container .blog-card:hover img {
   transform: scale(1.1);
 }
@@ -483,24 +412,20 @@ iframe {
   display: flex;
   padding: 60px;
 }
-
 .details img {
   width: 400px;
   height: 360px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 .details .blog-info {
   margin-left: 50px;
   text-align: left;
   margin-top: 15px;
 }
-
 .details .blog-info h1 {
   margin-bottom: 40px;
 }
-
 .details .blog-info p {
   font-family: "BPG Mrgvlovani";
 }
@@ -509,32 +434,26 @@ iframe {
   max-width: 650px;
   padding: 30px 100px;
 }
-
 .registration-container h1 {
   margin-bottom: 30px;
 }
-
 .registration-container input {
   margin-bottom: 18px;
 }
-
 .registration-container input:focus {
   outline: none;
   box-shadow: none;
 }
-
 .registration-container .registration-btn {
   color: white;
   padding: 10px;
   margin-top: 5px;
 }
-
 .registration-container button:hover {
   background-color: rgb(130, 163, 255);
   border-color: rgb(130, 163, 255);
   color: white;
 }
-
 .registration-container button:active {
   background-color: #1664db;
 }
@@ -542,22 +461,19 @@ iframe {
 .course-info {
   display: flex;
   justify-content: space-between;
-  padding: 60px 140px;
+  padding: 40px 140px;
   width: 100%;
 }
-
 .course-info .prof {
   width: 400px;
   height: 350px;
 }
-
 .course-info .prof img {
   width: 400px;
   height: 350px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
-
 .course-info .course-description {
   max-width: 630px;
   text-align: left;
@@ -565,17 +481,14 @@ iframe {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .course-info .course-description .title {
   font-size: 30px;
   font-weight: bold;
 }
-
 .course-info .course-description .price {
   font-size: 20px;
   font-weight: bold;
 }
-
 .course-info .course-description .course-information,
 .course-info .course-description .prof-name,
 .course-info .course-description .date {
@@ -584,13 +497,8 @@ iframe {
 
 @media only screen and (max-width: 500px) {
   .header-div {
-    display: block;
-  }
-
-  #header-div {
     display: none;
   }
-
   .menu {
     display: none;
     flex-direction: column;
@@ -602,109 +510,86 @@ iframe {
     background-color: #070707;
     align-items: flex-start;
   }
-
   header {
     background-color: #070707;
   }
-
   .menu.active {
     display: flex;
   }
-
   .burger {
     display: flex;
   }
-
   .cover {
     display: none;
   }
-
   .contact-info div {
     margin: 10px 20px 20px 20px;
   }
-
   .contact-form textarea {
     margin-top: 20px;
     width: 50%;
   }
-
   iframe {
     width: 370px;
     height: 208px;
   }
-
   .about-info {
     margin: 40px 40px;
   }
-
   .about-info h1 {
     font-size: 20px;
   }
-
   .about-info p {
     font-size: 15px;
   }
-
   .details {
     display: block;
     padding: 40px;
   }
-
   .details img {
     width: 320px;
     height: 280px;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
   }
-
   .details .blog-info {
     width: 320px;
     margin-left: 50px;
   }
-
   .details .blog-info h1 {
     margin-bottom: 10px;
     font-size: 20px;
   }
-
   .details .blog-info p {
     font-size: 14px;
   }
-
   .mb-0 {
     font-size: 15px;
   }
-
   .courses-container .courses .card {
     width: 350px;
     height: 200px;
   }
-
   .course-info {
     display: block;
     padding: 40px 90px;
   }
-
   .course-info .prof {
     width: 330px;
     height: 310px;
   }
-
   .course-info .prof img {
     width: 330px;
     height: 310px;
   }
-
   .course-info div {
     margin-bottom: 20px;
   }
 }
-
 @font-face {
   font-family: "BPG Mrgvlovani";
   src: url("../fonts/bpg_mrgvlovani_2009.ttf") format("opentype");
 }
-
 footer {
   font-family: "BPG Mrgvlovani";
   bottom: 0;
@@ -713,18 +598,15 @@ footer {
   width: 100%;
   padding: 40px;
 }
-
 footer .logo {
   width: 100px;
   height: 100px;
   margin: 30px auto;
 }
-
 footer .footer-logo-name {
   font-size: 30px;
   margin: 10px;
 }
-
 footer .social-networks {
   width: 300px;
   height: 70px;
@@ -733,19 +615,14 @@ footer .social-networks {
   justify-content: space-between;
   align-items: center;
 }
-
 footer .social-networks img {
   width: 50px;
 }
-
 footer hr {
   margin-top: 40px;
   margin-bottom: 40px;
   background-color: rgb(158, 158, 158);
 }
-
 footer .copy {
   font-size: 13px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
