@@ -1,14 +1,17 @@
 from uuid import uuid4
 from os import path
 from flask import Blueprint, render_template, url_for, redirect
+from flask_login import login_required
 
 from src.views.course.forms import CourseForm
 from src.models.course import Course
 from src.config import Config
+from src.utils import admin_required
 
 course_blueprint = Blueprint("courses", __name__)
 
 @course_blueprint.route("/add_course", methods=["GET", "POST"])
+@admin_required
 def add_product():
     form = CourseForm()
     if form.validate_on_submit():
@@ -26,6 +29,7 @@ def add_product():
     return render_template("course/add_course.html", form=form)
 
 @course_blueprint.route("/edit_course/<int:id>", methods=["GET", "POST"])
+@admin_required
 def edit_product(id):
     course = Course.query.get(id)
     form = CourseForm(name=course.name, price=course.price, prof=course.prof, description=course.description, date=course.date)
@@ -51,6 +55,7 @@ def edit_product(id):
     return render_template("course/add_course.html", form=form)
 
 @course_blueprint.route("/delete_course/<int:id>")
+@admin_required
 def delete_course(id):
     course = Course.query.get(id)
     course.delete()

@@ -11,28 +11,29 @@
     <link rel="stylesheet" href="/static/styles/css/style.css">
 </head>
 
+    {% from "partials/macros.html" import generate_navlink %}
+
 <body>
     <header>
         <a href="/" class="main-logo-link">
             <div class="main-logo">
-                <img src="static/upload/main-logo.png" alt="main logo">
-                <p>Future Tech Academy</p>
-            </div>
-        </a>
-        <!-- <a href="{{ url_for('main.index') }}" class="main-logo-link">
-            <div class="main-logo">
                 <img src="{{ url_for('static', filename='upload/main-logo.png') }}" alt="main logo">
                 <p>Future Tech Academy</p>
             </div>
-        </a> -->
+        </a>
         <nav class="menu" id="menu">
             <a href="/">მთავარი</a>
             <a href="/career" target="_blank">კარიერა</a>
             <a href="/blog">ბლოგი</a>
             <a href="/contact">კონტაქტი</a>
-            <a href="/about">შესახებ</a>
+            <a href="/about" class="menu-about">შესახებ</a>
+            {% if current_user.is_authenticated %}
+            {{ generate_navlink('პროფილი', 'auth.view_profile') }}
+            <a href="/logout">გამოსვლა</a>
+            {% else %}
             <a href="/registration">რეგისტრაცია</a>
-            <a href="/login">შესვლა</a>
+            <a href="/login">ავტორიზაცია</a>
+            {% endif %}
         </nav>
         <div style="display: flex; gap: 15px; align-items: center;">
             <div class="theme-toggle" id="themeToggle">
@@ -54,7 +55,7 @@
         <div class="logo">
             <a href="/" class="main-logo-link">
                 <div class="main-logo-footer">
-                    <img src="static/upload/main-logo.png" alt="main logo">
+                    <img src="{{ url_for('static', filename='upload/main-logo.png') }}" alt="main logo">
                 </div>
             </a>
         </div>

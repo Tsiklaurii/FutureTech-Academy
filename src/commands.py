@@ -4,6 +4,7 @@ import datetime
 
 from src.ext import db
 from src.models.course import Course
+from src.models.user import User
 
 @click.command("init_db")
 @with_appcontext
@@ -46,3 +47,6 @@ def populate_db():
                             img=course["img"], description=course["description"], date=course["date"])
         db.session.add(new_course)
     db.session.commit()
+
+    ### ADMIN USER ###
+    User(username="admin", password="password123", profile_img="admin.jpg", role="Admin").create()

@@ -3,11 +3,15 @@
     display: none;
   }
 
+  #blog-header-div{
+    display: block;
+  }
+
   .menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 76px;
+    top: 68px;
     left: 0;
     right: 0;
     padding: 25px;

@@ -1,0 +1,12 @@
+{% macro is_active(endpoint_name) %}
+    {% if endpoint_name == request.endpoint %}
+        active
+    {% endif %}
+{% endmacro %}
+
+{% macro generate_navlink(name, endpoint) %}
+  <a class="nav-link {{ is_active(endpoint) }}"
+     href="{{ url_for(endpoint) }}">
+    {{ name }}
+  </a>
+{% endmacro %}

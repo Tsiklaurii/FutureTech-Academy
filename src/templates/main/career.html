@@ -33,13 +33,18 @@
 
     <footer>
         <div class="logo">
-            <a href="index.html"><img src="" alt="logo"></a>
+            <a href="/" class="main-logo-link">
+                <div class="main-logo-footer">
+                    <img src="{{ url_for('static', filename='upload/main-logo.png') }}" alt="main logo">
+                </div>
+            </a>
         </div>
         <p class="footer-logo-name">FutureTech Academy</p>
         <p>მომავლის ტექნოლოგიების აკადემია</p>
         <div class="social-networks">
             <a href="https://www.facebook.com/"><img src="/static/images/soc-networks/fb.PNG" alt="fb"></a>
-            <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG" alt="instagram"></a>
+            <a href="https://www.instagram.com/"><img src="/static/images/soc-networks/instagram.PNG"
+                    alt="instagram"></a>
             <a href="https://www.linkedin.com/"><img src="/static/images/soc-networks/linkedin.PNG" alt="linkedin"></a>
             <a href="https://www.youtube.com/"><img src="/static/images/soc-networks/youtube.PNG" alt="youtube"></a>
         </div>

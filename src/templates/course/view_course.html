@@ -16,8 +16,10 @@
     </div>
 </div>
 
-<a href="/edit_course/{{ course.id }}" class="btn btn-primary mb-4">კურსის ცვლილება</a>
-<a href="/delete_course/{{ course.id }}" class="btn btn-danger mb-4">კურსის წაშლა</a>
+{% if current_user.is_authenticated and current_user.is_admin() %}
+    <a href="/edit_course/{{ course.id }}" class="btn btn-primary mb-4">კურსის ცვლილება</a>
+    <a href="/delete_course/{{ course.id }}" class="btn btn-danger mb-4">კურსის წაშლა</a>
+{% endif %}
 
 <script src="/static/scripts/header.js"></script>
 </body>

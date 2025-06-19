@@ -15,7 +15,9 @@
 <div class="courses-container">
     <h4>აირჩიე სასურველი კურსი და დარეგისტრირდი</h4>
 
-    <a href="/add_course" class="btn btn-primary mb-4">კურსის დამატება</a>
+    {% if current_user.is_authenticated and current_user.is_admin() %}
+        <a href="/add_course" class="btn btn-primary mb-4">კურსის დამატება</a>
+    {% endif %}
 
     <div class="courses">
         {% for course in courses %}
