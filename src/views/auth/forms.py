@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, length, equal_to, ValidationError
+from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
 from flask_wtf.file import FileField, FileRequired, FileSize, FileAllowed
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
+from src.models.user import User
 
 class LoginForm(FlaskForm):
     username = StringField("მომხმარებლის სახელი", validators=[DataRequired()])
@@ -14,10 +15,10 @@ class RegisterForm(FlaskForm):
     email = StringField("ემაილი", validators=[DataRequired()])
     password = PasswordField("პაროლი",
                              validators=[DataRequired(),
-                                         length(min=8, max=64)])
+                                         Length(min=8, max=64)])
     repeat_password = PasswordField("გაიმეორეთ პაროლი",
                                     validators=[DataRequired(),
-                                                equal_to("password",
+                                                EqualTo("password",
                                                          message="პაროლები არ ემთხვევა!")])
     profile_image = FileField("პროფილის ფოტო",
                               validators=[FileSize(1024 * 1024),
@@ -25,6 +26,13 @@ class RegisterForm(FlaskForm):
     agree = BooleanField('I agree to the terms and conditions.', validators=[DataRequired()])
 
     submit = SubmitField("რეგისტრაცია")
+
+
+    def validate_username(self, field):
+        existing_user = User.query.filter_by(username=field.data).first()
+        if existing_user:
+            raise ValidationError("მომხმარებლის სახელი დაკავებულია!")
+
 
     def validate_password(self, field):
         contains_uppercase = False

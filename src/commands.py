@@ -1,6 +1,5 @@
 from flask.cli import with_appcontext
 import click
-import datetime
 
 from src.ext import db
 from src.models.course import Course
@@ -49,4 +48,4 @@ def populate_db():
     db.session.commit()
 
     ### ADMIN USER ###
-    User(username="admin", password="password123", profile_img="admin.jpg", role="Admin").create()
+    User(username="admin", email="admin@gmail.com", password="password123", profile_img="admin.png", role="Admin").create()

@@ -38,11 +38,12 @@
 }
 
 .blogs-container {
-    width: 100%;
+    max-width: 1500px;
+    margin: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 80px;
+    padding: 90px;
 
     .blog-card {
         width: 350px;

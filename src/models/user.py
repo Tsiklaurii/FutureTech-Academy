@@ -10,9 +10,16 @@ class User (BaseModel, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
+    email = db.Column(db.String)
     _password = db.Column(db.String)
     profile_img = db.Column(db.String)
     role = db.Column(db.String)
+
+    user_courses = db.relationship("UserCourse", back_populates="user")
+
+    def __repr__(self):
+        return self.username
+
 
     def check_password(self, password):
         return check_password_hash(self.password, password)

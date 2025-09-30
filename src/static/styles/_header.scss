@@ -49,9 +49,12 @@ header.scrolled {
 }
 
 .menu {
-  margin-right: -170px;
   display: flex;
-  gap: 15px;
+  gap: 25px;
+
+  .profile-icon {
+    width: 30px;
+  }
 
   a {
     text-decoration: none;
@@ -62,10 +65,11 @@ header.scrolled {
   a:hover {
     box-shadow: 0 2px white;
   }
+}
 
-  .menu-about {
-    margin-right: 100px;
-  }
+.profile {
+  display: flex;
+  align-items: center;
 }
 
 .burger {

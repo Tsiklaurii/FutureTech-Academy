@@ -3,7 +3,7 @@
     display: none;
   }
 
-  #blog-header-div{
+  #blog-header-div {
     display: block;
   }
 
@@ -104,13 +104,17 @@
     padding: 40px 90px;
 
     .prof {
-      width: 330px;
+      width: 100%;
       height: 310px;
 
       img {
-        width: 330px;
+        width: 100%;
         height: 310px;
       }
+    }
+
+    .course-description {
+      text-align: center;
     }
 
     div {

@@ -8,9 +8,9 @@ from src.commands import init_db, populate_db
 from src.commands import init_db, populate_db
 from src.models.user import User
 from src.models.course import Course
+from src.models.user_course import UserCourse
 from src.admin_views.base import SecureModelView
-from src.admin_views.user import UserView
-from src.admin_views.course import CourseView
+from src.admin_views import CourseView, UserView, UserCourseView
 
 BLUEPRINTS = [main_blueprint, auth_blueprint, course_blueprint]
 COMMANDS = [init_db, populate_db]
@@ -46,6 +46,7 @@ def register_extensions(app):
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))
     admin.add_view(CourseView(Course, db.session))
+    admin.add_view(UserCourseView(UserCourse, db.session))
 
     admin.add_link(MenuLink("To Site", url="/", icon_type="fa", icon_value="fa-sign-out"))
 

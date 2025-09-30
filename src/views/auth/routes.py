@@ -29,12 +29,17 @@ def registration():
     form = RegisterForm()
     if form.validate_on_submit():
         file = form.profile_image.data
-        _, extension = path.splitext(file.filename)
-        filename = f"{uuid4()}{extension}"
-        file.save(path.join(Config.UPLOAD_PATH, filename))
+        if file:
+            _, extension = path.splitext(file.filename)
+            filename = f"{uuid4()}{extension}"
+            file.save(path.join(Config.UPLOAD_PATH, filename))
+        else:
+            filename = "user.png"
 
-        new_user = User(username=form.username.data, password=form.password.data, profile_img=filename)
+        new_user = User(username=form.username.data, email=form.email.data, password=form.password.data, profile_img=filename)
         new_user.create()
+
+        return redirect(url_for("auth.login"))
     return render_template("auth/registration.html", form=form)
 
 @auth_blueprint.route("/logout")

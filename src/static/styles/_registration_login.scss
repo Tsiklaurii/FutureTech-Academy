@@ -1,6 +1,7 @@
 .registration-container {
     max-width: 650px;
     padding: 30px 100px;
+    height: 700px;
 
     h1 {
         margin-bottom: 30px;
@@ -16,18 +17,17 @@
     }
 
     .registration-btn {
-        color: white;
+        color: $white;
         padding: 10px;
         margin-top: 5px;
     }
 
-    button:hover {
-        background-color: rgb(130, 163, 255);
-        border-color: rgb(130, 163, 255);
-        color: white;
+    .registration-btn:hover {
+        background-color: $btn-hover;
+        border-color: $btn-hover;
     }
 
-    button:active {
+    .registration-btn:active {
         background-color: $registration-btn;
     }
 }

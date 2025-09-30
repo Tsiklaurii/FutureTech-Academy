@@ -1,16 +1,17 @@
 .course-info {
     display: flex;
-    justify-content: space-between;
-    padding: 80px 140px;
+    padding: 80px 160px 50px 200px;
     width: 100%;
 
     .prof {
         width: 400px;
-        height: 350px;
+        height: 400px;
+        margin-right: 30px;
+        overflow: hidden;
 
         img {
             width: 400px;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
         }
     }
@@ -20,7 +21,7 @@
         text-align: left;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 15px;
 
         .title {
             font-size: 30px;
@@ -38,4 +39,8 @@
             font-family: "BPG Mrgvlovani";
         }
     }
+}
+
+.btn {
+    margin-bottom: 50px;
 }
