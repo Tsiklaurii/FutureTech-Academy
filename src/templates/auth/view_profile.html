@@ -4,17 +4,25 @@
 
 <div class="header-div" style="display: block; background-color: black;"></div>
 
-<!-- Course Info -->
 <div class="course-info">
     <div class="prof"><img src="/static/upload/{{ current_user.profile_img }}" alt="User Photo"></div>
     <div class="course-description">
-        <div class="title">მომხმარებლის სახელი: {{ current_user.username }}</div>
+        <div class="title">სახელი: {{ current_user.username }}</div>
+
+        <h3 class="title">არჩეული კურსები:</h3>
+        <ul class="selected-courses">
+            {% for uc in current_user.user_courses %}
+            <li>
+                <span>{{ uc.course.name }} – {{ uc.course.prof }}</span>
+                <span class="price">{{ uc.course.price }} ₾</span>
+            </li>
+            {% else %}
+            <li>არჩეული კურსები ვერ მოიძებნა</li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
 
 <script src="/static/scripts/header.js"></script>
-</body>
-
-</html>
 
 {% endblock %}

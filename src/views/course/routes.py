@@ -1,8 +1,10 @@
 from uuid import uuid4
 from os import path
 from flask import Blueprint, render_template, url_for, redirect
-from flask_login import login_required
+from flask_login import login_required, current_user
 
+from src import db
+from src.models.user_course import UserCourse
 from src.views.course.forms import CourseForm
 from src.models.course import Course
 from src.config import Config
@@ -27,6 +29,7 @@ def add_product():
         return redirect(url_for("main.index"))
 
     return render_template("course/add_course.html", form=form)
+
 
 @course_blueprint.route("/edit_course/<int:id>", methods=["GET", "POST"])
 @admin_required
@@ -54,6 +57,7 @@ def edit_product(id):
 
     return render_template("course/add_course.html", form=form)
 
+
 @course_blueprint.route("/delete_course/<int:id>")
 @admin_required
 def delete_course(id):
@@ -62,7 +66,22 @@ def delete_course(id):
 
     return redirect(url_for("main.index"))
 
+
 @course_blueprint.route("/view/<int:courses_id>")
 def view_course(courses_id):
     chosen_course = Course.query.get(courses_id)
     return render_template("course/view_course.html", course=chosen_course)
+
+
+@course_blueprint.route("/choose_course/<int:course_id>")
+@login_required
+def choose_course(course_id):
+    course = Course.query.get(course_id)
+
+    existing = UserCourse.query.filter_by(user_id=current_user.id, course_id=course.id).first()
+
+    if not existing:
+        user_course = UserCourse(user_id=current_user.id, course_id=course.id)
+        db.session.add(user_course)
+        db.session.commit()
+    return redirect(url_for("auth.view_profile"))

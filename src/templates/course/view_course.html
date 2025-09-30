@@ -4,7 +4,6 @@
 
 <div class="header-div" style="display: block; background-color: black;"></div>
 
-<!-- Course Info -->
 <div class="course-info">
     <div class="prof"><img src="/static/upload/{{ course.img }}" alt="Course Professor"></div>
     <div class="course-description">
@@ -21,9 +20,10 @@
     <a href="/delete_course/{{ course.id }}" class="btn btn-danger">კურსის წაშლა</a>
 {% endif %}
 
-<script src="/static/scripts/header.js"></script>
-</body>
+{% if current_user.is_authenticated and not current_user.is_admin() %}
+    <a href="{{ url_for('courses.choose_course', course_id=course.id) }}" class="btn btn-success">არჩევა</a>
+{% endif %}
 
-</html>
+<script src="/static/scripts/header.js"></script>
 
 {% endblock %}

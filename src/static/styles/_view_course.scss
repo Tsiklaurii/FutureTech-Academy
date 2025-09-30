@@ -6,7 +6,7 @@
     .prof {
         width: 400px;
         height: 400px;
-        margin-right: 30px;
+        margin-right: 40px;
         overflow: hidden;
 
         img {
@@ -23,6 +23,32 @@
         flex-direction: column;
         gap: 15px;
 
+        .selected-courses {
+            list-style: none;
+            padding: 0;
+        }
+
+        .selected-courses li {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .selected-courses li:hover {
+            transform: translateY(-2px);
+        }
+
+        .selected-courses li .price {
+            font-weight: bold;
+            color: $blue;
+        }
+
         .title {
             font-size: 30px;
             font-weight: bold;
@@ -31,6 +57,7 @@
         .price {
             font-size: 20px;
             font-weight: bold;
+            margin-left: 20px;
         }
 
         .course-information,

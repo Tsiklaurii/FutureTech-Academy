@@ -29,13 +29,13 @@
             <a href="/about">შესახებ</a>
         </nav>
         {% if current_user.is_authenticated %}
-        <nav class="menu profile" id="menu">
+        <nav class="menu profile">
             <a href="{{ url_for('auth.view_profile') }}" class="nav-item"><img src="../../static/images/profile.png"
                     class="profile-icon" alt="profile"></a>
             <a href="/logout">Log Out</a>
         </nav>
         {% else %}
-        <nav class="menu" id="menu">
+        <nav class="menu">
             <a href="/login">Log In</a>
         </nav>
         {% endif %}
