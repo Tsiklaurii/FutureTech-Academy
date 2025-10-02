@@ -1,37 +1,55 @@
 .registration-container {
-    max-width: 650px;
-    padding: 30px 100px;
-    height: 700px;
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px $auth_shadow;
+}
 
-    h1 {
-        margin-bottom: 30px;
-    }
+.registration-container h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    color: $title;
+}
 
-    input {
-        margin-bottom: 18px;
-    }
+.registration-container input {
+    margin-bottom: 16px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid $input_border;
+}
 
-    input:focus {
-        outline: none;
-        box-shadow: none;
-    }
+.registration-container input:focus {
+    outline: none;
+    border-color: $btn;
+    box-shadow: 0 0 0 0.15rem $input_focus;
+}
 
-    .registration-btn {
-        color: $white;
-        padding: 10px;
-        margin-top: 5px;
-    }
+.registration-container .registration-btn {
+    width: 100%;
+    background-color: $btn;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $white;
+    margin-top: 12px;
+    transition: background-color 0.2s, transform 0.2s;
+}
 
-    .registration-btn:hover {
-        background-color: $btn-hover;
-        border-color: $btn-hover;
-    }
+.registration-container .registration-btn:hover {
+    background-color: $btn-hover;
+    transform: translateY(-2px);
+}
 
-    .registration-btn:active {
-        background-color: $registration-btn;
-    }
+.registration-container .registration-btn:active {
+    background-color: $btn-active;
+    transform: translateY(0);
 }
 
 .login-container {
-    padding: 140px 100px;
+    padding: 60px 50px;
 }
