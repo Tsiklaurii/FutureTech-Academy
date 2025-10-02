@@ -4,6 +4,15 @@
 
 <div class="header-div" style="display: block; background-color: black;"></div>
 
+<!-- Alert regarding course selection -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} show" role="alert">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
 <div class="course-info">
     <div class="prof"><img src="/static/upload/{{ course.img }}" alt="Course Professor"></div>
     <div class="course-description">

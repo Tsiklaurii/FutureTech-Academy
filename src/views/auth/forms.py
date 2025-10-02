@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
-from flask_wtf.file import FileField, FileRequired, FileSize, FileAllowed
+from flask_wtf.file import FileField, FileSize, FileAllowed
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models.user import User
 

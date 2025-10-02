@@ -6,18 +6,23 @@
 <div class="cover">
     <img src="/static/images/General-slider.png" alt="General-slider">
     <div class="registration">
-        <p>დარეგისტრირდი სასურველ კურსზე</p>
+        {% if not current_user.is_authenticated %}
+        <p>დარეგისტრირდი და აირჩიე სასურველი კურსი</p>
         <button class="registration-btn"><a href="/registration">რეგისტრაცია</a></button>
+        {% else %}
+        <p>დაიწყე გზა კარიერისკენ ჩვენთან ერთად</p>
+        <p>აირჩიე სასურველი კურსი</p>
+        {% endif %}
     </div>
 </div>
 <div id="blog-header-div"></div>
 
 <!-- Courses -->
 <div class="courses-container">
-    <h4>აირჩიე სასურველი კურსი და დარეგისტრირდი</h4>
+    <h4>აირჩიე სასურველი კურსი</h4>
 
     {% if current_user.is_authenticated and current_user.is_admin() %}
-        <a href="/add_course" class="btn btn-primary mb-4">კურსის დამატება</a>
+    <a href="/add_course" class="btn btn-primary mb-4">კურსის დამატება</a>
     {% endif %}
 
     <div class="courses">
@@ -47,7 +52,5 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 <script src="/static/scripts/header.js"></script>
-</body>
 
-</html>
 {% endblock %}

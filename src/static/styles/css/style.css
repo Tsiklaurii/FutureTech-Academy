@@ -112,13 +112,14 @@ body {
 .registration {
   position: absolute;
   top: 40%;
-  left: 55%;
+  left: 58%;
   color: #fff;
   font-size: 25px;
 }
 .registration p {
   font-weight: bold;
   letter-spacing: 0.5px;
+  width: 500px;
 }
 
 .registration-btn {
@@ -501,13 +502,15 @@ iframe {
 
 .course-info {
   display: flex;
+  justify-content: center;
+  display: flex;
   padding: 80px 160px 50px 200px;
   width: 100%;
+  gap: 90px;
 }
 .course-info .prof {
   width: 400px;
   height: 400px;
-  margin-right: 40px;
   overflow: hidden;
 }
 .course-info .prof img {
@@ -544,6 +547,7 @@ iframe {
 .course-info .course-description .selected-courses li .price {
   font-weight: bold;
   color: rgb(7, 65, 192);
+  margin-left: 20px;
 }
 .course-info .course-description .title {
   font-size: 30px;
@@ -552,7 +556,6 @@ iframe {
 .course-info .course-description .price {
   font-size: 20px;
   font-weight: bold;
-  margin-left: 20px;
 }
 .course-info .course-description .course-information,
 .course-info .course-description .prof-name,
@@ -562,6 +565,12 @@ iframe {
 
 .btn {
   margin-bottom: 50px;
+}
+
+.alert {
+  width: 400px;
+  margin: auto;
+  top: 20px;
 }
 
 @media only screen and (max-width: 500px) {

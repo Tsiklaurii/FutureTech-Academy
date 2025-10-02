@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_admin.menu import MenuLink
-
 from src.config import Config
 from src.ext import db, migrate, login_manager, admin
 from src.views import main_blueprint, auth_blueprint, course_blueprint

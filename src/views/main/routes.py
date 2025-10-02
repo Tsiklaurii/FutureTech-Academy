@@ -1,6 +1,4 @@
 from flask import Blueprint, render_template
-from flask_login import current_user
-
 from src.models.course import Course
 
 main_blueprint = Blueprint("main", __name__)

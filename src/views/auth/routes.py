@@ -2,7 +2,6 @@ from uuid import uuid4
 from os import path
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_user, logout_user, login_required
-
 from src.views.auth.forms import RegisterForm, LoginForm
 from src.config import Config
 from src.models.user import User
@@ -45,7 +44,7 @@ def registration():
 @auth_blueprint.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("main.index"))
 
 @auth_blueprint.route("/profile")
 @login_required

@@ -1,8 +1,7 @@
 from uuid import uuid4
 from os import path
-from flask import Blueprint, render_template, url_for, redirect
+from flask import Blueprint, render_template, url_for, redirect, flash
 from flask_login import login_required, current_user
-
 from src import db
 from src.models.user_course import UserCourse
 from src.views.course.forms import CourseForm
@@ -14,7 +13,7 @@ course_blueprint = Blueprint("courses", __name__)
 
 @course_blueprint.route("/add_course", methods=["GET", "POST"])
 @admin_required
-def add_product():
+def add_course():
     form = CourseForm()
     if form.validate_on_submit():
         file = form.img.data
@@ -33,7 +32,7 @@ def add_product():
 
 @course_blueprint.route("/edit_course/<int:id>", methods=["GET", "POST"])
 @admin_required
-def edit_product(id):
+def edit_course(id):
     course = Course.query.get(id)
     form = CourseForm(name=course.name, price=course.price, prof=course.prof, description=course.description, date=course.date)
 
@@ -53,7 +52,7 @@ def edit_product(id):
             course.img = filename
 
         course.save()
-        return redirect(url_for("main.index"))
+        return redirect(url_for("courses.view_course", courses_id=course.id))
 
     return render_template("course/add_course.html", form=form)
 
@@ -84,4 +83,8 @@ def choose_course(course_id):
         user_course = UserCourse(user_id=current_user.id, course_id=course.id)
         db.session.add(user_course)
         db.session.commit()
-    return redirect(url_for("auth.view_profile"))
+        flash(f"წარმატებით აირჩიე კურსი: {course.name}", "success")
+    else:
+        flash("კურსი უკვე არჩეულია!", "warning")
+
+    return redirect(url_for("courses.view_course", courses_id=course.id))
